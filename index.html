@@ -20,10 +20,16 @@
             height: 80px;
             z-index: 99999
         }
-        .jinrishici-sentence{
+        .jinrishici{
             font-family:HYLuoHuaShiW;
         }
     </style>
+    <script type="text/javascript">
+        jinrishici.load(function (result) {
+            var sentence = document.querySelector("#jinrishici");
+            sentence.innerHTML = result.data.content + '--' + "【" + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+        });
+    </script>
     <script>
 
         var $buoop = { required: { e: -4, f: -3, o: -3, s: -1, c: -3 }, insecure: true, api: 2022.05 };
@@ -42,7 +48,7 @@
     <h1>这是一个令人蚌埠住了的站</h1>
     <h2>如果您无法打出流汗黄豆表情，您可以在这里复制：“😅”</h2>
     <div>本站纯文字域名: <a href="https://xn--j28h.eu.org/">xn--j28h.eu.org</a></div>
-    <div class="footer"><span id="jinrishici-sentence" class="jinrishici-sentence">Loading....</span><p>本站是一个静态页面，制作过程中未使用任何Cookies，但不排除服务提供商会使用少量Cookies。</p></div>
+    <div class="footer"><span id="jinrishici" class="jinrishici">Loading....</span><p>本站是一个静态页面，制作过程中未使用任何Cookies，但不排除服务提供商会使用少量Cookies。</p></div>
     
 </body>
 </html>
