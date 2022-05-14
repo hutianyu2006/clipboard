@@ -6,6 +6,23 @@
     <script src="https://ip.ws.126.net/ipquery"></script>
     <link rel="stylesheet" href="pyscript.css" />
     <script defer src="pyscript.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+                url:'https://sdk.jinrishici.com/v2/browser/jinrishici.js'
+                type:'GET',
+               complete:function(response){
+                                            if(response.status == 200){
+                                            var secScript =  document.createElement("script");
+                                            var apply=document.getElementsByTagName("head")[0];
+                                            secScript.setAttribute("type","text/javascript");
+                                            secScript.setAttribute("src","https://sdk.jinrishici.com/v2/browser/jinrishici.js");
+                                            secScript.onload=function(){console.log("Jinrishiju Loaded");}
+                                            apply.appendChild(secScript);
+                        }else{
+                              var error=document.getElementById("jinrishici");
+                              error.innerHTML="抱歉，您所在的地区无法加载今日诗词"；
+);
+    </script>
     <style>
         @font-face {
             font-family: HYLuoHuaShiW;
