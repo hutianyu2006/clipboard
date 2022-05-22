@@ -16,16 +16,7 @@
             filter:grayscale(1);
         }
 
-        .footer {
-            position: fixed;
-            left: 0px;
-            bottom: 0px;
-            width: 100%;
-            height: 120px;
-            z-index: 99999;
-            background-color:black;
-            color:white;
-        }
+        
         .jinrishici{
             font-family:HYLuoHuaShiW;
         }
@@ -56,7 +47,7 @@
     <h2>如果您无法打出流汗黄豆表情，您可以在这里复制：“😅”</h2>
     <div>本站纯文字域名: <a href="https://xn--j28h.eu.org/">xn--j28h.eu.org</a></div>
     <h1>沉痛悼念袁隆平院士逝世1周年,缅怀</h1>
-    <div class="footer"><span id="jinrishici" class="jinrishici">Loading....</span><p>本站是一个静态页面，制作过程中未使用任何Cookies，但不排除服务提供商会使用少量Cookies。</p><p id="ip"></p></div>
+    <div class="absolute inset-x-0 bottom-0 h-16 bg-black text-white "><span id="jinrishici" class="jinrishici">Loading....</span><p>本站是一个静态页面，制作过程中未使用任何Cookies，但不排除服务提供商会使用少量Cookies。</p><p id="ip"></p></div>
     <script>
         var inp = document.getElementById("ip");
         inp.innerHTML = "您当前的IP归属地是：" + localAddress["province"]+ " "+localAddress["city"];
