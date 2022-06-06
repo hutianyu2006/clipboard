@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="zh-cn" class="text-center font-sans">
 <head>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-    <script src="https://ip.ws.126.net/ipquery"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--虽然不知道为什么，但是webhint告诉我应该这么做-->
+    <script src="./jquery.js"></script><!--jQuery,用于引入Ajax（未使用，将来在添加更多功能时会用于处理JSON）-->
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script><!--今日诗词-->
+    <script src="https://ip.ws.126.net/ipquery"></script><!--IP查询-->
+    <script src="./tailwind.js"></script><!--Tailwind CSS框架-->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4268841298888138"
-     crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script><!--谷歌广告-->
+    <script type="text/javascript" src="./web3.min.js"></script><!--Web3 框架，以后在制作相关功能时使用-->
     <style>
         @font-face {
             font-family: HYLuoHuaShiW;
-            src: url("https://cdn.jsdelivr.net/gh/hutianyu2006/hutianyu2006.github.io/HYLuoHuaShiW.ttf");
+            src: url("./HYLuoHuaShiW.ttf");
         }
-        .jinrishici{
-            font-family:HYLuoHuaShiW;
+
+        .jinrishici {
+            font-family: HYLuoHuaShiW;
+        }
+    </style><!--今日诗词字体-->
+    <style>
+        html {
+            text-size-adjust:100%;
         }
     </style>
     <script type="text/javascript">
@@ -22,18 +30,7 @@
             sentence.innerHTML = result.data.content + '--' + "【" + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
         });
     </script>
-    <script>
 
-        var $buoop = { required: { e: -4, f: -3, o: -3, s: -1, c: -3 }, insecure: true, api: 2022.05 };
-        function $buo_f() {
-            var e = document.createElement("script");
-            e.src = "https://browser-update.org/update.min.js";
-            document.body.appendChild(e);
-        };
-        try { document.addEventListener("DOMContentLoaded", $buo_f, false) }
-        catch (e) { window.attachEvent("onload", $buo_f) }
-    </script>
-    
     <title>一个令人蚌埠住了的站</title>
 </head>
 <body>
@@ -45,8 +42,17 @@
     <div class="absolute inset-x-0 bottom-0 bg-black text-white "><span id="jinrishici" class="jinrishici">今日诗词加载失败</span><p>本站是一个静态页面，制作过程中未使用任何Cookies，但是Google广告会使用一些Cookies。</p><p id="ip"></p></div>
     <script>
         var inp = document.getElementById("ip");
-        inp.innerHTML = "您当前的IP归属地是：" + localAddress["province"]+ " "+localAddress["city"];
+        inp.innerHTML = "您当前的IP归属地是：" + localAddress["province"] + " " + localAddress["city"];
     </script>
-        
+    <script>
+        var $buoop = { required: { e: -4, f: -3, o: -3, s: -1, c: -3 }, insecure: true, style: "corner", api: 2022.06 };
+        function $buo_f() {
+            var e = document.createElement("script");
+            e.src = "https://browser-update.org/update.min.js";
+            document.body.appendChild(e);
+        };
+        try { document.addEventListener("DOMContentLoaded", $buo_f, false) }
+        catch (e) { window.attachEvent("onload", $buo_f) }
+    </script>
 </body>
 </html>
