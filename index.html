@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"><!--虽然不知道为什么，但是webhint告诉我应该这么做-->
     <script src="./jquery.js"></script><!--jQuery,用于引入Ajax（未使用，将来在添加更多功能时会用于处理JSON）-->
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script><!--今日诗词-->
-    <script src="https://ip.ws.126.net/ipquery"></script><!--IP查询-->
     <script src="./tailwind.js"></script><!--Tailwind CSS框架-->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4268841298888138"
             crossorigin="anonymous"></script><!--谷歌广告-->
@@ -21,7 +20,7 @@
     </style><!--今日诗词字体-->
     <style>
         html {
-            text-size-adjust:100%;
+            text-size-adjust: 100%;
         }
     </style>
     <script type="text/javascript">
@@ -29,8 +28,11 @@
             var sentence = document.querySelector("#jinrishici");
             sentence.innerHTML = result.data.content + '--' + "【" + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
         });
-    </script>
-
+    </script><!--今日诗词加载-->
+    <script>
+        var web3 = new Web3(Web3.givenProvider || "https://cloudflare-eth.com/v1/mainnet");
+        console.log(web3.eth.getAccounts());
+    </script><!--初始化Web 3.0模块-->
     <title>一个令人蚌埠住了的站</title>
 </head>
 <body>
@@ -41,8 +43,15 @@
     <h1 class="text-4xl text-red-500">预祝莘莘学子高考金榜题名，圆梦于自己理想的高校</h1>
     <div class="absolute inset-x-0 bottom-0 bg-black text-white "><span id="jinrishici" class="jinrishici">今日诗词加载失败</span><p>本站是一个静态页面，制作过程中未使用任何Cookies，但是Google广告会使用一些Cookies。</p><p id="ip"></p></div>
     <script>
-        var inp = document.getElementById("ip");
-        inp.innerHTML = "您当前的IP归属地是：" + localAddress["province"] + " " + localAddress["city"];
+        $.ajax({
+            url: 'https://ip.useragentinfo.com/jsonp',
+            type: 'get',
+            dataType: 'jsonp',
+            success: function (data) {
+                var inp = document.getElementById('ip');
+                inp.innerHTML = "您的IP归属地是 " + data["country"] + " " + data["province"] + " " + data["city"] + " " + data["area"];
+            }
+    });
     </script>
     <script>
         var $buoop = { required: { e: -4, f: -3, o: -3, s: -1, c: -3 }, insecure: true, style: "corner", api: 2022.06 };
