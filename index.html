@@ -29,10 +29,6 @@
             sentence.innerHTML = result.data.content + '--' + "【" + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
         });
     </script><!--今日诗词加载-->
-    <script>
-        var web3 = new Web3(Web3.givenProvider || "https://cloudflare-eth.com/v1/mainnet");
-        console.log(web3.eth.getAccounts());
-    </script><!--初始化Web 3.0模块-->
     <title>一个令人蚌埠住了的站</title>
 </head>
 <body>
@@ -41,7 +37,7 @@
     <h2>如果您无法打出流汗黄豆表情，您可以在这里复制：“😅”</h2>
     <div>本站纯文字域名: <a href="https://xn--j28h.eu.org/">xn--j28h.eu.org</a></div>
     <h1 class="text-4xl text-red-500">预祝莘莘学子高考金榜题名，圆梦于自己理想的高校</h1>
-    <div class="absolute inset-x-0 bottom-0 bg-black text-white "><span id="jinrishici" class="jinrishici">今日诗词加载失败</span><p>本站是一个静态页面，制作过程中未使用任何Cookies，但是Google广告会使用一些Cookies。</p><p id="ip"></p></div>
+    <div class="absolute inset-x-0 bottom-0 bg-black text-white "><p><input name="connectETH" type="button" id="connectETH" class="bg-sky-400 rounded-lg" value="  连接Web 3.0框架（实验性） " /></p><span id="jinrishici" class="jinrishici">今日诗词加载失败</span><p>本站是一个静态页面，制作过程中未使用任何Cookies，但是Google广告会使用一些Cookies。</p><p id="ip"></p></div>
     <script>
         $.ajax({
             url: 'https://ip.useragentinfo.com/jsonp',
@@ -62,6 +58,40 @@
         };
         try { document.addEventListener("DOMContentLoaded", $buo_f, false) }
         catch (e) { window.attachEvent("onload", $buo_f) }
+    </script>
+    <script>
+        async function login() {
+            if (typeof window.ethereum === "undefined") {
+                //没安装MetaMask钱包进行弹框提示
+                console.log("请安装MetaMask");
+            } else {
+                //如果用户安装了MetaMask，你可以要求他们授权应用登录并获取其账号
+                ethereum.enable()
+                    .catch(function (reason) {
+                        //如果用户拒绝了登录请求
+                        if (reason === "User rejected provider access") {
+                            // 用户拒绝登录后执行语句；
+                        } else {
+                            // 本不该执行到这里，但是真到这里了，说明发生了意外
+                            console.log("There was a problem signing you in");
+                        }
+                    }).then(function (accounts) {
+                        // 判断是否连接以太
+                        if (ethereum.networkVersion !== desiredNetwork) { }
+                        let currentProvider = web3.currentProvider;
+                        web3.setProvider(currentProvider);
+                        //如果用户同意了登录请求，你就可以拿到用户的账号
+                        web3.eth.defaultAccount = accounts[0];
+
+                        myContract = new web3.eth.Contract(ABI, metaMaskAddress);
+                        //这里返回用户钱包地址
+                        console.log(accounts[0]);
+                    });
+            }
+        function $(id) { return document.getElementById(id); }
+        $("connectETH").onclick = function () {
+            login();
+        }
     </script>
 </body>
 </html>
