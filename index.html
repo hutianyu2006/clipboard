@@ -37,7 +37,7 @@
         <p>
             <input name="btnClick" type="button" id="upload" class="bg-red-500 text-white rounded-full box-border text-5xl h-16" value=" 提交 " />
         </p>
-        <div id="results" class="text-white sm:text-xl md:text-xl"></div>
+        <div id="results" class="text-cyan-500 sm:text-xl md:text-xl"></div>
     </div>
     <script>
         function getUrlParam(name) {
@@ -58,7 +58,7 @@
         cidn = getUrlParam('cid');
         if (cidn !== null) {
             content = document.getElementById('content');
-            content.innerHTML = '<div class="text-white">本CID的数据为：</div><input id="datum" type="text" class="w-96 h-72 rounded-lg bg-white" value="" disabled />';
+            content.innerHTML = '<div class="text-cyan-500">本CID的数据为：</div><input id="datum" type="text" class="w-96 h-72 rounded-lg bg-white" value="" disabled />';
             $.ajax({
                 url: "https://infura-ipfs.io:5001/api/v0/cat?arg=" + cidn,
                 dataType: 'Text',
