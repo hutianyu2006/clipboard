@@ -33,9 +33,9 @@
 <body class="text-center">
     <div id="title" class="text-9xl">蚌埠剪贴板</div>
     <div id="content">
-        <input id="datum" type="text" class="w-96 h-72 rounded-lg" value="在此输入" />
+        <textarea rows="10" cols="30" id="datum" class="rounded-lg text-xl"></textarea>
         <p>
-            <input name="btnClick" type="button" id="upload" class="bg-red-500 text-white rounded-full box-border text-5xl h-16" value=" 提交 " />
+            <input name="btnClick" type="button" id="upload" class="bg-red-500 text-white rounded-full box-border text-2xl h-8" value=" 提交 " />
         </p>
         <div id="results" class="inline-block text-cyan-800 sm:text-xl md:text-xl"></div>
     </div>
@@ -58,7 +58,7 @@
         cidn = getUrlParam('cid');
         if (cidn !== null) {
             content = document.getElementById('content');
-            content.innerHTML = '<div class="text-cyan-500">本CID的数据为：</div><input id="datum" type="text" class="w-96 h-72 rounded-lg bg-white" value="" disabled />';
+            content.innerHTML = '<div class="text-cyan-500">本CID的数据为：</div><textarea rows="10" cols="30" id="datum" class="rounded-lg bg-white text-xl" disabled></textarea>';
             $.ajax({
                 url: "https://infura-ipfs.io:5001/api/v0/cat?arg=" + cidn,
                 dataType: 'Text',
