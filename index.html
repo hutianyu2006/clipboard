@@ -37,7 +37,7 @@
         <p>
             <input name="btnClick" type="button" id="upload" class="bg-red-500 text-white rounded-full box-border text-5xl h-16" value=" 提交 " />
         </p>
-        <div id="results" class="text-cyan-500 sm:text-xl md:text-xl"></div>
+        <div id="results" class="inline-block text-cyan-800 sm:text-xl md:text-xl"></div>
     </div>
     <script>
         function getUrlParam(name) {
@@ -51,7 +51,7 @@
         document.getElementById("upload").onclick = async function() {
             const ipfs = window.IpfsHttpClient.create({ url: "https://infura-ipfs.io:5001/" });
             const result = await ipfs.add(document.getElementById('datum').value);
-            document.getElementById("results").innerText = "您上传的剪贴板的地址为："+ window.location.href + '?cid=' + result["path"];
+            document.getElementById("results").innerHTML = "您上传的剪贴板的地址为："+"<div class='bg-black text-white rounded-lg'>"+ window.location.href + '?cid=' + result["path"]+ "</div>";
         }
     </script>
     <script>
