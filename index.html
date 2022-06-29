@@ -294,6 +294,20 @@ Check your Browserslist config to be sure that your targets are set up correctly
     <title>蚌埠剪贴板</title>
 </head>
 <body class="text-center">
+    <script>
+        function ismobile() {
+            var info = navigator.userAgent;
+            var ismobile = /mobile/i.test(info);
+            return ismobile
+        }
+        function jumptomobile() {
+            if (window.innerWidth <= 768 || ismobile()) {
+                window.location.href = './mobile.html' + window.location.search;
+            }
+        }
+        jumptomobile();
+        addEventListener('resize', jumptomobile);
+    </script>
     <div id="title" class="text-6xl">蚌埠剪贴板</div>
     <div id="subtitle" class="text-xl">Web 3.0 的剪贴板</div>
     <div id="content">
@@ -379,20 +393,6 @@ Check your Browserslist config to be sure that your targets are set up correctly
                 'google_translate_element' // 存放翻译组件元素的id
             );
         }
-    </script>
-    <script>
-        function ismobile() {
-            var info = navigator.userAgent;
-            var ismobile = /mobile/i.test(info);
-            return ismobile
-        }
-        function jumptomobile() {
-            if (window.innerWidth <= 768 || ismobile()) {
-                window.location.href = './mobile.html' + window.location.search;
-            }
-        }
-        jumptomobile();
-        addEventListener('resize', jumptomobile);
     </script>
 </body>
 </html>
