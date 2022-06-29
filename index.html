@@ -388,7 +388,7 @@ Check your Browserslist config to be sure that your targets are set up correctly
         }
         function jumptomobile() {
             if (window.innerWidth <= 768 || ismobile()) {
-                window.location.href =  './mobile.html';
+                window.location.href = './mobile.html' + window.location.search;
             }
         }
         jumptomobile();
