@@ -381,8 +381,13 @@ Check your Browserslist config to be sure that your targets are set up correctly
         }
     </script>
     <script>
+        function ismobile() {
+            var info = navigator.userAgent;
+            var ismobile = /mobile/i.test(info);
+            return ismobile
+        }
         function jumptomobile() {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 768 || ismobile()) {
                 window.location.href =  './mobile.html';
             }
         }
