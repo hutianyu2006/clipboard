@@ -350,7 +350,21 @@ Check your Browserslist config to be sure that your targets are set up correctly
             var decryptedText = aesjs.utils.utf8.fromBytes(decryptedBytes);
             return decryptedText;
         }
-        
+
+        function shortURL(url) {
+            var site = btoa(url);
+            $.ajax({
+                url: 'https://tsutsu.top/short',
+                dataType: 'text',
+                data: { "longUrl": site },
+                type: 'POST',
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    document.getElementById("results").innerHTML = "您上传的剪贴板的地址为：" + "<div class='bg-black text-white rounded-lg'>" + result["ShortUrl"] + "</div>" + '<p>已经帮您复制好了，务必保存妥当，没了就是没了！</p>';
+                }
+            });
+            return window.shortened;
+        }
         function copy_to_clipboard(text) {
             const input = document.createElement('input');
             document.body.appendChild(input);
@@ -365,7 +379,7 @@ Check your Browserslist config to be sure that your targets are set up correctly
             const ipfs = window.IpfsHttpClient.create({ url: "https://infura-ipfs.io:5001/" });
             document.getElementById("results").innerHTML = "正在加密并上传，请耐心等待……";
             const result = await ipfs.add(encrypt(document.getElementById('datum').value));
-            document.getElementById("results").innerHTML = "您上传的剪贴板的地址为：" + "<div class='bg-black text-white rounded-lg'>" + window.location.href + '?cid=' + result["path"] + "</div>" + '<p>已经帮您复制好了，务必保存妥当，没了就是没了！</p>';
+            shortURL(window.location.href + '?cid=' + result["path"]);
             copy_to_clipboard(window.location.href + '?cid=' + result["path"]);
         }
     </script>
