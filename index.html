@@ -351,7 +351,7 @@ Check your Browserslist config to be sure that your targets are set up correctly
             return decryptedText;
         }
 
-        function shortURL(url) {
+        function displayURL(url) {
             var site = btoa(url);
             $.ajax({
                 url: 'https://tsutsu.top/short',
@@ -359,8 +359,9 @@ Check your Browserslist config to be sure that your targets are set up correctly
                 data: { "longUrl": site },
                 type: 'POST',
                 success: function (data) {
-                    var result = $.parseJSON(data);
-                    document.getElementById("results").innerHTML = "您上传的剪贴板的地址为：" + "<div class='bg-black text-white rounded-lg'>" + result["ShortUrl"] + "</div>" + '<p>已经帮您复制好了，务必保存妥当，没了就是没了！</p>';
+                    var resulting = $.parseJSON(data);
+                    document.getElementById("results").innerHTML = "您上传的剪贴板的地址为：" + "<div class='bg-black text-white rounded-lg'>" + resulting["ShortUrl"] + "</div>" + '<p>已经帮您复制好了，务必保存妥当，没了就是没了！</p>';
+                    copy_to_clipboard(resulting["ShortUrl"]);
                 }
             });
             return window.shortened;
@@ -379,8 +380,7 @@ Check your Browserslist config to be sure that your targets are set up correctly
             const ipfs = window.IpfsHttpClient.create({ url: "https://infura-ipfs.io:5001/" });
             document.getElementById("results").innerHTML = "正在加密并上传，请耐心等待……";
             const result = await ipfs.add(encrypt(document.getElementById('datum').value));
-            shortURL(window.location.href + '?cid=' + result["path"]);
-            copy_to_clipboard(window.location.href + '?cid=' + result["path"]);
+            displayURL(window.location.href + '?cid=' + result["path"]);
         }
     </script>
     <script>
