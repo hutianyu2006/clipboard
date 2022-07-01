@@ -280,20 +280,31 @@ Check your Browserslist config to be sure that your targets are set up correctly
         #title {
             color: #66ccff;
         }
+        #top {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            opacity: 0.6;
+            height: fit-content;
+            z-index: 99999;
+            background-color: #000000;
+        }
 
         .footer {
             position: fixed;
             left: 0px;
             bottom: 0px;
             width: 100%;
-            height: 120px;
+            height: fit-content;
             background-color: #000000;
             z-index: 99999;
+            opacity: 0.6;
         }
     </style>
     <title>蚌埠剪贴板</title>
 </head>
 <body class="text-center">
+    <div id="top" class="text-xl text-left"><a href="./about.html" class="text-sky-200"> FAQ </a><a class="text-sky-200" href="https://github.com/hutianyu2006/clipboard"> Github </a><a href="./donate.html" class="text-sky-200"> 捐赠 </a></div>
     <script>
         function jumptomobile() {
             if (window.innerWidth >= 768) {
@@ -312,7 +323,7 @@ Check your Browserslist config to be sure that your targets are set up correctly
         </p>
         <div id="results" class="inline-block text-cyan-800 sm:text-xl md:text-xl"></div>
     </div>
-    <div class="footer"><a href="./about.html" class="text-sky-200">FAQ</a><p class="text-sky-200 text-2xl"><a href="https://github.com/hutianyu2006/clipboard">Github</a></p><p class="text-white text-lg" translate="no">Copyright © 2022 <a href="https://space.bilibili.com/165751258" class="text-cyan-50">Bilibili@吾乃程瑾呈</a> Some rights reserved.</p></div>
+    <div class="footer"><p class="text-white text-lg" translate="no">Copyright © 2022 <a href="https://space.bilibili.com/165751258" class="text-cyan-50">Bilibili@吾乃程瑾呈</a> Some rights reserved.</p></div>
     <div id='google_translate_element' style='position: fixed; top: 0px; right: 0px;z-index: 99999'></div>
     <script>
         function getUrlParam(name) {
