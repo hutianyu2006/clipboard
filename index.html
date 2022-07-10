@@ -588,9 +588,6 @@ if (cid) {
         cidn = getUrlParam('cid');
         if (cidn !== null) {
             content = document.getElementById('content');
-            if (type !== null) {
-                document.getElementById('content').innerHTML = '< div class="text-cyan-500" > 本剪贴板的数据为：</div ><input id="datum" type="' + type + '" disabled class="rounded-lg bg-white text-xl" /><p><input name="btnClick" type="button" id="upload" class="bg-red-500 text-white rounded-full box-border text-2xl h-8" value=" 上传 " /></p><div id="results" class="inline-block text-cyan-800 sm:text-xl md:text-xl"></div>'
-            } else {
                 content.innerHTML = '<div class="text-cyan-500">本剪贴板的数据为：</div><textarea rows="10" cols="30" id="datum" class="rounded-lg bg-white text-xl" disabled></textarea>';
             }
             document.getElementById("datum").value = "正在下载并解密，请耐心等待…… \n 1分钟后不显示可以刷新一下~"
@@ -602,7 +599,7 @@ if (cid) {
                     document.getElementById("datum").value = decrypt(data);
                 }
             })
-        }
+        
     </script>
 
 </body>
