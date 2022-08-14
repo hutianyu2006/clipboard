@@ -57,6 +57,7 @@
 <body class="text-center">
     <div id="top" class="text-lg text-left"><p><a href="./about.html" class="text-sky-200"> FAQ </a></p><p><a class="text-sky-200" href="https://github.com/hutianyu2006/clipboard"> Github </a></p><p><a href="./donate.html" class="text-sky-200"> 捐赠 </a></p></div>
     <script>
+
         function jumptomobile() {
             if (window.innerWidth >= 768) {
                 window.location.href = './index.html' + window.location.search;
@@ -68,14 +69,15 @@
     <div id="title" class="text-4xl">蚌埠剪贴板</div>
     <div id="subtitle" class="text-xl text-white">Web 3.0 的剪贴板</div>
     <div id="content">
-        <textarea rows="10" cols="30" id="datum" class="rounded-lg text-lg"></textarea>
+        <textarea rows="10" cols="30" id="datum" class="rounded-lg text-lg" disabled value="Infura IPFS Gateway 失效，蚌埠剪贴板不可用"></textarea>
         <p>
-            <input name="btnClick" type="button" id="upload" class="bg-red-500 text-white rounded-full box-border text-2xl h-8" value=" 上传 " />
+            <input name="btnClick" type="button" id="upload" class="bg-red-500 text-white rounded-full box-border text-2xl h-8" value=" 上传 " disabled />
         </p>
         <div id="results" class="inline-block text-cyan-800 text-lg"></div>
     </div>
     <div class="footer"><p class="text-white text-lg" translate="no">Copyright © 2022 <a href="https://space.bilibili.com/165751258" class="text-cyan-50">Bilibili@吾乃程瑾呈</a> Some rights reserved.</p></div>
     <script>
+        document.getElementById("datum").value = "Infura IPFS Gateway 失效，蚌埠剪贴板不可用";
         function getUrlParam(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
             var r = window.location.search.substr(1).match(reg);
