@@ -157,10 +157,8 @@
                     document.getElementById("datum").innerHTML = "抱歉，出了些问题！";
                 }
             })
-            document.getElementById("copy").onclick = function () {
-                copy_to_clipboard(document.getElementById("datum").value);
-            }
         }
+        document.getElementById('copy').onclick = copy_to_clipboard(document.getElementById("datum").value);
     </script>
 
 </body>
