@@ -115,7 +115,7 @@
                 success: function (data) {
                     var resulting = $.parseJSON(data);
                     var resulturl = "https://lnks.tools" + resulting["key"];
-                    document.getElementById("results").innerHTML = "您上传的剪贴板的地址为：" + "<div class='bg-white text-black rounded-lg'>" + resulturl + '<button id="copy2" class="bg-red- 500 text-white rounded-full box-border text-2xl h-8" onclick="copy_to_clipboard(resulturl)"> 复制 </button></div>';
+                    document.getElementById("results").innerHTML = "您上传的剪贴板的地址为：" + "<div class='bg-white text-black rounded-lg'>" + resulturl + '<button id="copy2" class="bg-red-500 text-white rounded-full box-border text-2xl h-8" onclick="copy_to_clipboard(resulturl)"> 复制 </button></div>';
                 },
                 error: function () {
                     document.getElementById("results").innerHTML = "抱歉，出了些问题！";
