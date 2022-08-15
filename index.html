@@ -143,7 +143,7 @@
         cidn = getUrlParam('cid');
         if (cidn !== null) {
             content = document.getElementById('content');
-            content.innerHTML = '<div class="text-cyan-500">本剪贴板的数据为：</div><textarea rows="10" cols="30" id="datum" class="rounded-lg bg-white text-xl" disabled></textarea><p><input name="btnClick" type="button" id="copy" class="bg-red-500 text-white rounded-full box-border text-2xl h-8" value=" 复制 "/></p>';
+            content.innerHTML = '<div class="text-cyan-500">本剪贴板的数据为：</div><textarea rows="10" cols="30" id="datum" class="rounded-lg bg-white text-xl" disabled></textarea><p><button id="copy" class="bg-red-500 text-white rounded-full box-border text-2xl h-8"> 复制 </button></p>';
             
             document.getElementById("datum").value = "正在下载并解密，请耐心等待…… \n 1分钟后不显示可以刷新一下~"
             $.ajax({
