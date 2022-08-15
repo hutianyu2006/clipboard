@@ -116,6 +116,9 @@
                     var resulting = $.parseJSON(data);
                     document.getElementById("results").innerHTML = "您上传的剪贴板的地址为：" + "<div class='bg-white text-black rounded-lg'>" + "https://lnks.tools" + resulting["key"] + "</div>" + '<p>已经帮您复制好了，务必保存妥当，没了就是没了！</p>';
                     copy_to_clipboard("https://lnks.tools" + resulting["key"]);
+                },
+                error: function () {
+                    document.getElementById("results").innerHTML = "抱歉，出了些问题！";
                 }
             });
         }
@@ -140,7 +143,7 @@
         cidn = getUrlParam('cid');
         if (cidn !== null) {
             content = document.getElementById('content');
-                content.innerHTML = '<div class="text-cyan-500">本剪贴板的数据为：</div><textarea rows="10" cols="30" id="datum" class="rounded-lg bg-white text-xl" disabled></textarea>';
+            content.innerHTML = '<div class="text-cyan-500">本剪贴板的数据为：</div><textarea rows="10" cols="30" id="datum" class="rounded-lg bg-white text-xl" disabled></textarea>';
             
             document.getElementById("datum").value = "正在下载并解密，请耐心等待…… \n 1分钟后不显示可以刷新一下~"
             $.ajax({
@@ -149,8 +152,15 @@
                 type: 'post',
                 success: function (data) {
                     document.getElementById("datum").value = decrypt(data);
+                    content.innerHTML = content.innerHTML + '<p><input name="btnClick" type="button" id="copy" class="bg-red-500 text-white rounded-full box-border text-2xl h-8" value=" 复制 "/></p>';
+                },
+                error: function () {
+                    document.getElementById("datum").innerHTML = "抱歉，出了些问题！";
                 }
-            })
+            });
+            document.getElementById("copy").onClick = function () {
+                copy_to_clipboard(document.getElementById("datum").value);
+            }
         }
     </script>
 
