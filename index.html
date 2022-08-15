@@ -71,15 +71,14 @@
     <div id="title" class="text-6xl">蚌埠剪贴板</div>
     <div id="subtitle" class="text-xl text-white">Web 3.0 的剪贴板</div>
     <div id="content">
-        <textarea rows="10" cols="30" id="datum" class="rounded-lg text-xl" disabled value="Infura IPFS Gateway 失效，蚌埠剪贴板不可用"></textarea>
+        <textarea rows="10" cols="30" id="datum" class="rounded-lg text-xl" ></textarea>
         <p>
-            <input name="btnClick" type="button" id="upload" class="bg-red-500 text-white rounded-full box-border text-2xl h-8" value=" 上传 " disabled/>
+            <input name="btnClick" type="button" id="upload" class="bg-red-500 text-white rounded-full box-border text-2xl h-8" value=" 上传 "/>
         </p>
         <div id="results" class="inline-block text-cyan-800 sm:text-xl md:text-xl"></div>
     </div>
     <div class="footer"><p class="text-white text-lg" translate="no">Copyright © 2022 <a href="https://space.bilibili.com/165751258" class="text-cyan-50">Bilibili@吾乃程瑾呈</a> Some rights reserved.</p></div>
     <script>
-        document.getElementById("datum").value = "Infura IPFS Gateway 失效，蚌埠剪贴板不可用";
         function getUrlParam(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
             var r = window.location.search.substr(1).match(reg);
@@ -132,7 +131,7 @@
             document.body.removeChild(input);
         }
         document.getElementById("upload").onclick = async function () {
-            const ipfs = window.IpfsHttpClient.create({ url: "https://infura-ipfs.io:5001/" });
+            const ipfs = window.IpfsHttpClient.create({ url: "https://linux-mirror.xn--j28h.eu.org/" });
             document.getElementById("results").innerHTML = "正在加密并上传，请耐心等待……";
             const result = await ipfs.add(encrypt(document.getElementById('datum').value));
             displayURL(window.location.href + '?cid=' + result["path"]);
@@ -146,7 +145,7 @@
             
             document.getElementById("datum").value = "正在下载并解密，请耐心等待…… \n 1分钟后不显示可以刷新一下~"
             $.ajax({
-                url: "https://infura-ipfs.io:5001/api/v0/cat?arg=" + cidn,
+                url: "https://linux-mirror.xn--j28h.eu.org/api/v0/cat?arg=" + cidn,
                 dataType: 'Text',
                 type: 'post',
                 success: function (data) {
