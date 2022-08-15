@@ -90,6 +90,7 @@
     </script>
     <script>
         var key = [11, 41, 51, 41, 91, 98, 10, 67, 37, 15, 1, 30, 38, 14, 20, 16, 77, 84, 0, 11, 25, 03, 62, 11, 41, 51, 41, 91, 98, 10, 11, 14];
+        var showurl = "showurl";
         function encrypt(data) {
             var text = data;
             var textBytes = aesjs.utils.utf8.toBytes(text);
@@ -115,7 +116,7 @@
                 success: function (data) {
                     var resulting = $.parseJSON(data);
                     var resulturl = "https://lnks.tools" + resulting["key"];
-                    document.getElementById("results").innerHTML = "您上传的剪贴板的地址为：" + "<div class='bg-white text-black rounded-lg'>" + resulturl + '<button id="copy2" class="bg-red-500 text-white rounded-full box-border text-2xl h-8" onclick="copy_to_clipboard(this.resulturl)"> 复制 </button></div>';
+                    document.getElementById("results").innerHTML = "您上传的剪贴板的地址为：" + "<div class='bg-white text-black rounded-lg'><div id='showurl'>" + resulturl + '</div><button id="copy2" class="bg-red-500 text-white rounded-full box-border text-2xl h-8" onclick="copy_to_clipboard(document.getElementById(showurl).innerHTML)"> 复制 </button></div>';
                 },
                 error: function () {
                     document.getElementById("results").innerHTML = "抱歉，出了些问题！";
