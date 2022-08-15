@@ -158,7 +158,7 @@
                 }
             });
         }
-        $("copy").click(function () {
+        document.getElementById("copy").addEventListener("click", function () {
             copy_to_clipboard(document.getElementById("datum").value);
         });
     </script>
