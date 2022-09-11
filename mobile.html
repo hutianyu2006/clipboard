@@ -109,7 +109,7 @@
             $.ajax({
                 url: 'https://linux-mirror.xn--j28h.eu.org/short',
                 dataType: 'text',
-                data: 'url=' + url ;
+                data: 'url=' + url ,
                 type: 'POST',
                 success: function (data) {
                     document.getElementById("results").innerHTML = "您上传的剪贴板的地址为：" + "<div class='bg-white text-black rounded-lg'><div id='showurl'>" + data + '</div><button id="copy2" class="bg-red-500 text-white rounded-full box-border text-2xl h-8" onclick="copy_to_clipboard(document.getElementById(showurl).innerHTML)"> 复制 </button></div>';
