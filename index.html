@@ -132,7 +132,7 @@
             document.body.removeChild(input);
         }
         document.getElementById("upload").onclick = async function () {
-            const ipfs = window.IpfsHttpClient.create({ url: "https://linux-mirror.xn--j28h.eu.org/" });
+            const ipfs = window.IpfsHttpClient.create({ url: "https://ipfs.xn--jlqp0gjt8ea.cf" });
             document.getElementById("results").innerHTML = "正在加密并上传，请耐心等待……";
             const result = await ipfs.add(encrypt(document.getElementById('datum').value));
             displayURL(window.location.href + '?cid=' + result["path"]);
@@ -146,7 +146,7 @@
             
             document.getElementById("datum").value = "正在下载并解密，请耐心等待…… \n 1分钟后不显示可以刷新一下~"
             $.ajax({
-                url: "https://linux-mirror.xn--j28h.eu.org/api/v0/cat?arg=" + cidn,
+                url: "https://ipfs.xn--jlqp0gjt8ea.cf/api/v0/cat?arg=" + cidn,
                 dataType: 'Text',
                 type: 'post',
                 success: function (data) {
