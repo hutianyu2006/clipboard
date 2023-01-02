@@ -1,8 +1,10 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta data-react-helmet="true" name="description" content="蚌埠剪贴板 | 将您的少量数据加密存放在可靠的点对点超媒体协议中，是连站长想看都看不到的近乎绝对安全的存储空间。">
     <script src="./js/ipfs.js"></script>
     <script src="./js/jquery.js"></script>
     <script src="./js/aes.js"></script>
@@ -156,10 +158,6 @@
             })
         }
         document.getElementById("copy").addEventListener("click", function () {
-            copy_to_clipboard(document.getElementById("datum").value);
-            document.getElementById("results").innerHTML = "复制完毕！";
-        });
-        document.getElementById("copy2").addEventListener("click", function () {
             copy_to_clipboard(document.getElementById("datum").value);
             document.getElementById("results").innerHTML = document.getElementById("results").innerHTML + "<p>复制完毕！</p>";
         });

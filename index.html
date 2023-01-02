@@ -159,9 +159,6 @@
         }
         document.getElementById("copy").addEventListener("click", function () {
             copy_to_clipboard(document.getElementById("datum").value);
-        });
-        document.getElementById("copy2").addEventListener("click", function () {
-            copy_to_clipboard(document.getElementById("datum").value);
             document.getElementById("results").innerHTML = document.getElementById("results").innerHTML + "<p>复制完毕！</p>";
         });
     </script>
