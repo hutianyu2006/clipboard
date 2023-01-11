@@ -9,6 +9,11 @@
     <script src="./js/jquery.js"></script>
     <script src="./js/aes.js"></script>
     <script src="./js/tailwind.js"></script>
+    <script>
+        /*请在这里进行一部分配置*/
+        var ipfsNode = "https://ipfs.xn--jlqp0gjt8ea.cf";//可读写的IPFS网关地址,此网关由鸽云(https://fast.pigeon.sbs/)赞助。
+        var urlShortener = "https://xn--eb5a.cf"//短链接API, 本代码中使用klein所用的提交方式，其他API请在下面自行修改
+    </script>
     <style>
         @font-face {
             font-family: 'HarmonyOS Sans';
@@ -132,7 +137,7 @@
             document.body.removeChild(input);
         }
         document.getElementById("upload").onclick = async function () {
-            const ipfs = window.IpfsHttpClient.create({ url: "https://ipfs.xn--jlqp0gjt8ea.cf/" });
+            const ipfs = window.IpfsHttpClient.create({ url: ipfsNode });
             document.getElementById("results").innerHTML = "正在加密并上传，请耐心等待……";
             const result = await ipfs.add(encrypt(document.getElementById('datum').value));
             displayURL(window.location.href + '?cid=' + result["path"]);
@@ -145,7 +150,7 @@
             content.innerHTML = '<div class="text-cyan-500">本剪贴板的数据为：</div><textarea rows="10" cols="30" id="datum" class="rounded-lg bg-white text-xl" disabled></textarea><p><button id="copy" class="bg-red-500 text-white rounded-full box-border text-2xl h-8"> 复制 </button></p><div id="results" class="inline-block text-cyan-800 text-lg"></div>';
             document.getElementById("datum").value = "正在下载并解密，请耐心等待…… \n 1分钟后不显示可以刷新一下~"
             $.ajax({
-                url: "https://ipfs.xn--jlqp0gjt8ea.cf/api/v0/cat?arg=" + cidn,
+                url: ipfsNode + "/api/v0/cat?arg=" + cidn,
                 dataType: 'Text',
                 type: 'post',
                 success: function (data) {
