@@ -1,0 +1,4 @@
+/*Please make configurations here.*/
+var ipfsNode = "https://ipfs.xn--jlqp0gjt8ea.cf";//A read-writable IPFS Node(The current one is not exactly stable).
+var urlShortener = "https://xn--eb5a.cf"//Link Shortener, and link shortener built by klein is used here. Edit the javascript function displayURL() if you are using a link shortener in another format.  
+var key = [11, 41, 51, 41, 91, 98, 10, 67, 37, 15, 1, 30, 38, 14, 20, 16, 77, 84, 0, 11, 25, 03, 62, 11, 41, 51, 41, 91, 98, 10, 11, 14];//AES encryption key, a different one means the data stored previously WILL BE DESTORYED FOREVER.Be careful!

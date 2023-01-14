@@ -8,11 +8,7 @@
     <script src="./js/jquery.js"></script>
     <script src="./js/aes.js"></script>
     <script src="./js/tailwind.js"></script>
-    <script>
-        /*请在这里进行一部分配置*/
-        var ipfsNode = "https://ipfs.xn--jlqp0gjt8ea.cf";//可读写的IPFS网关地址
-        var urlShortener = "https://xn--eb5a.cf"//短链接API, 本代码中使用klein所用的提交方式，其他API请在下面自行修改
-    </script>
+    <script src="./config.js"></script>
     <style>
         @font-face {
             font-family: 'HarmonyOS Sans';
@@ -97,7 +93,6 @@
         }
     </script>
     <script>
-        var key = [11, 41, 51, 41, 91, 98, 10, 67, 37, 15, 1, 30, 38, 14, 20, 16, 77, 84, 0, 11, 25, 03, 62, 11, 41, 51, 41, 91, 98, 10, 11, 14];
         var showurl = "showurl";
         function encrypt(data) {
             var text = data;
