@@ -1,10 +1,10 @@
 English | [简体中文](https://github.com/hutianyu2006/clipboard/blob/main/README-zh-CN.md)
 
-#Bengbu Clipboard
+# Bengbu Clipboard
 
   This is a Web 3.0 Pastebin similar to [Ubuntu Pastebin](https://pastebin.ubuntu.com/), but it is running based on a peer-to-peer hypermedia protocol called [IPFS](https://ipfs.tech/). No login required, and theoretically it may store unlimited data.
 
-  ##Features
+  ## Features
 
   1.The only place where the overhead is higher should be to build your own IPFS read-write nodes, after all, the free services I know are now charging.
 
@@ -14,17 +14,17 @@ English | [简体中文](https://github.com/hutianyu2006/clipboard/blob/main/REA
 
   4.Using native Javascript, ~~because I can't understand the Vue documentation~~.
 
-  ##Demo
+  ## Demo
 
   [https://😅.eu.org/](https://xn--j28h.eu.org/) (The origin of the name of this program, which is a Chinese meme.)
 
   [https://i-am-cjc.ml/](https://i-am-cjc.ml/) 
 
-  ##Depolyment
+  ## Depolyment
 
   As the main files are static HTML files, you can just clone it into a folder and set it as the web root(details can be seen in the help page of the server software you are using). Also, it is a Cloudflare Pages friendly project, just folk it and depoly it to [Cloudflare Pages](https://pages.cloudflare.com/)
 
-  ##Configuration
+  ## Configuration
 
   It does not have much configuration to do, mainly the three variables in `config.js`:
 
@@ -34,7 +34,7 @@ English | [简体中文](https://github.com/hutianyu2006/clipboard/blob/main/REA
 
   `key`: An array containing 32 random integers, used for AES encryption and decryption.**WARNING: MODIFYING IT WILL DESTORY ALL THE DATA PREVIOUSLY STORED. BE CAREFUL!**
 
-  ##Development
+  ## Development
 
   Fork or clone it, and just have fun editing.
 
@@ -42,7 +42,7 @@ English | [简体中文](https://github.com/hutianyu2006/clipboard/blob/main/REA
 
   I am learning about Github, and I need some time to understand how to deal with pull requests. However, [Issues](https://github.com/hutianyu2006/clipboard/issues) are welcomed anytime.
 
-  ##Credits
+  ## Credits
 
   [jquery/jquery](https://github.com/jquery/jquery)
 
@@ -52,6 +52,6 @@ English | [简体中文](https://github.com/hutianyu2006/clipboard/blob/main/REA
 
   [ricmoo/aes-js](https://github.com/ricmoo/aes-js)
 
-  ##Translation
+  ## Translation
 
   I tried to add a Google translate addon for multi-language, but it didn't work. Just talk about it later.

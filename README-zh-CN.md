@@ -1,10 +1,10 @@
 简体中文 | [English](https://github.com/hutianyu2006/clipboard/blob/main/README.md)
 
-#蚌埠剪贴板
+# 蚌埠剪贴板
 
   这是一个类似于[Ubuntu Pastebin](https://pastebin.ubuntu.com/)的Web 3.0 剪贴板, 但它是基于一个名为 [IPFS](https://ipfs.tech/)的点对点超媒体协议运行的。不需要登录，而且理论上它可以存储无限的数据。
 
-  ##特性
+  ## 特性
 
   1.唯一开销较大的地方应该就是自建IPFS可读写节点了，毕竟我知道的免费服务现在都收费了。
 
@@ -14,17 +14,17 @@
 
   4.使用原生Javascript，~~因为看不懂Vue文档~~。
 
-  ##部署
+  ## 部署
 
   由于主要文件是静态HTML文件，你只需将其克隆到一个文件夹中，并将其设置为网站根目录（详情可在你所使用的服务器软件的帮助页面中查看）。此外，它是一个对Cloudflare Pages友好的项目，只要Fork一下，然后部署到[Cloudflare Pages](https://pages.cloudflare.com/)就行。
 
-  ##Demo
+  ## Demo
 
   [https://😅.eu.org/](https://xn--j28h.eu.org/) （蚌埠剪贴板的名字来源）（中国大陆貌似不可用）
 
   [https://i-am-cjc.ml/](https://i-am-cjc.ml/) 
 
-  ##配置
+  ## 配置
 
   它没有太多的配置要做，主要是`config.js`中的三个变量 :
 
@@ -34,15 +34,15 @@
 
   `key`: 一个包含了32个整数的数组。用于AES加密和解密。**警告：修改它将破坏所有先前存储的数据。请注意!**
 
-  ##开发
+  ## 开发
 
   Fork或者clone一下，随你怎么皮。
 
-  ##做贡献
+  ## 做贡献
 
   Github我还不怎么会用,怎么处理交上来的PR也还在学，但是[Issues](https://github.com/hutianyu2006/clipboard/issues)随时欢迎。
 
-  ##使用的其他开源项目
+  ## 使用的其他开源项目
 
   [jquery/jquery](https://github.com/jquery/jquery)
 
