@@ -30,7 +30,7 @@
 
   `ipfsNode`: 一个可读可写的IPFS节点。在用户的浏览器中启动一个节点其实可以，但是和直接存储在localStorage中没有什么区别，因为IPFS中的数据更新超慢。所以，这个方案不做考虑。现在使用的默认节点由 [鸽云](https://fast.pigeon.sbs/)赞助。
 
-  `urlShortener`: 一个短链接API. 由于存储的剪贴板链接通常很长(IPFS的内容ID干的好事), 短链接很有必要. 用[klein](https://github.com/kamaln7/klein)搭建的短链接服务可以在这直接使用, 如果你希望使用别家的短链接服务, 请修改`index.html`和`mobile.html`里的`displayURL()`函数。
+  `urlShortener`: 一个短链接API. 由于存储的剪贴板链接通常很长(IPFS的内容ID干的好事), 短链接很有必要. 用[klein](https://github.com/kamaln7/klein)搭建的短链接服务可以在这直接使用, 如果你希望使用别家的短链接服务, 请修改`js/main.js`里的`displayURL()`函数。
 
   `key`: 一个包含了32个整数的数组。用于AES加密和解密。**警告：修改它将破坏所有先前存储的数据。请注意!**
 
@@ -40,7 +40,7 @@
 
   ## 做贡献
 
-  Github我还不怎么会用,怎么处理交上来的PR也还在学，但是[Issues](https://github.com/hutianyu2006/clipboard/issues)随时欢迎。
+  ~~Github我还不怎么会用,怎么处理交上来的PR也还在学，但是[Issues](https://github.com/hutianyu2006/clipboard/issues)随时欢迎。~~ 已经学废了，直接交PR或者Issues吧。
 
   ## 使用的其他开源项目
 

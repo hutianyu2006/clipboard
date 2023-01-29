@@ -30,7 +30,7 @@ English | [简体中文](https://github.com/hutianyu2006/clipboard/blob/main/REA
 
   `ipfsNode`: A read-writeable IPFS Node. It is POSSIBLE to launch one in the user's browser, but there would be no difference between storing it directly into the localStorage, as data in IPFS flows slowly. So,  that plan won't be included in consideration. The current default node is sponsored by [Pigeon Cloud](https://fast.pigeon.sbs/).
 
-  `urlShortener`: A link shortener. As the original link of a clipboard stored is usually long(thanks to the Content ID of IPFS), a link shortener is required. Link shortener built by [klein](https://github.com/kamaln7/klein) can be used here, and if you hope that you can use another link shortening service, please modify the displayURL() function in both `index.html` and `mobile.html`.
+  `urlShortener`: A link shortener. As the original link of a clipboard stored is usually long(thanks to the Content ID of IPFS), a link shortener is required. Link shortener built by [klein](https://github.com/kamaln7/klein) can be used here, and if you hope that you can use another link shortening service, please modify the displayURL() function in `js/main.js`.
 
   `key`: An array containing 32 random integers, used for AES encryption and decryption.**WARNING: MODIFYING IT WILL DESTORY ALL THE DATA PREVIOUSLY STORED. BE CAREFUL!**
 
@@ -40,7 +40,7 @@ English | [简体中文](https://github.com/hutianyu2006/clipboard/blob/main/REA
 
   ##Contribute
 
-  I am learning about Github, and I need some time to understand how to deal with pull requests. However, [Issues](https://github.com/hutianyu2006/clipboard/issues) are welcomed anytime.
+  ~~I am learning about Github, and I need some time to understand how to deal with pull requests. However, [Issues](https://github.com/hutianyu2006/clipboard/issues) are welcomed anytime.~~ Both PR & Issues are accepted.
 
   ## Credits
 
