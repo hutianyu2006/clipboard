@@ -1,5 +1,7 @@
 English | [简体中文](https://github.com/hutianyu2006/clipboard/blob/main/README-zh-CN.md)
 
+#It won't be avaliable anymore.
+
 # Bengbu Clipboard
 
   This is a Web 3.0 Pastebin similar to [Ubuntu Pastebin](https://pastebin.ubuntu.com/), but it is running based on a peer-to-peer hypermedia protocol called [IPFS](https://ipfs.tech/). No login required, and theoretically it may store unlimited data.
@@ -16,9 +18,7 @@ English | [简体中文](https://github.com/hutianyu2006/clipboard/blob/main/REA
 
   ## Demo
 
-  [https://😅.eu.org/](https://xn--j28h.eu.org/) (The origin of the name of this program, which is a Chinese meme.)
-
-  [https://i-am-cjc.ml/](https://i-am-cjc.ml/) 
+  Nope.
 
   ## Depolyment
 
